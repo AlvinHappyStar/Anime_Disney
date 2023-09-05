@@ -21,6 +21,7 @@ function RecoveryForm({ handleSubmit }: any) {
             marginTop: "16px",
             paddingLeft: 0,
             borderColor: "#ffffff",
+            userSelect: 'text',
           }}
         >
           Recover

@@ -22,7 +22,7 @@ function ChatBoxForm({ handleSubmit }: any) {
         name="message"
         value={value}
         // placeholder={
-        //   user ? "Message" : "Please login to enter message"
+        //   user ? "Message" : "Login to enter message"
         // }
         // disabled={!user}
         component="textarea"
@@ -53,6 +53,7 @@ function ChatBoxForm({ handleSubmit }: any) {
           background: "none",
           border: "2px solid #ffffff",
           borderLeft: 0,
+          userSelect: 'text',
         }}
       >
         Send

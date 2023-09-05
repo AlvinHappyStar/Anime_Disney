@@ -4,7 +4,7 @@ const apiResponse = require("../../../util/apiResponse");
 const Messages = require("../Models/Messages");
 const { promisify } = require("util");
 const jwt = require("jsonwebtoken");
-const GroupChat = require("../Models/GroupChat");
+const PublicChat = require("../Models/PublicChat");
 const AppError = require("../../../util/appError");
 const { success, unauthorized } =
   require("../../../util/statusCode").statusCode;
@@ -33,7 +33,7 @@ exports.addChat = tryCatchAsync(async (req, res, next) => {
     return next(new AppError("Unauthorized", unauthorized));
   }
 
-  const data = await GroupChat.create({
+  const data = await PublicChat.create({
     message,
     p_user: p_user,
   });
@@ -44,7 +44,7 @@ exports.addChat = tryCatchAsync(async (req, res, next) => {
 
 exports.addGuestChat = tryCatchAsync(async (req, res, next) => {
   const { p_user, message, socketId } = req.body;
-  const data = await GroupChat.create({
+  const data = await PublicChat.create({
     message,
     p_user: p_user._id ? p_user : new ObjectId("000000000000000000000000"),
   });
@@ -54,7 +54,7 @@ exports.addGuestChat = tryCatchAsync(async (req, res, next) => {
 
 exports.updateChat = tryCatchAsync(async (req, res, next) => {
   
-  const message = await GroupChat.findOne({ _id: req.body.id });
+  const message = await PublicChat.findOne({ _id: req.body.id });
   message.message = req.body.message;
   message.save();
   let response_data = { message };
@@ -81,7 +81,7 @@ exports.updateMessage = tryCatchAsync(async (req, res, next) => {
 })
 
 exports.getChat = tryCatchAsync(async (req, res) => {
-  const chat = await GroupChat.find()
+  const chat = await PublicChat.find()
     .populate("p_user")
     .select("-password")
     .sort({ updatedAt: 1 });
@@ -215,7 +215,7 @@ exports.updatePublicMessage = tryCatchAsync(async (req, res, next) => {
     token,
     process.env.JWT_SECRET
   );
-  const message = await GroupChat.findOne({ p_user: decoded_token.id });
+  const message = await PublicChat.findOne({ p_user: decoded_token.id });
 
   message.message = req.body.message;
   await message.save();

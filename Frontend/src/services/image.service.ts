@@ -64,13 +64,13 @@ const ImageService = {
 
     return [success, error];
   },
-  bgMusic: async (data: any, dispatch: AppDispatch) => {
+  backgroundMusic: async (data: any, dispatch: AppDispatch) => {
     const [success1, error1]: any = await Promisable.asPromise(
       http.get("https://json.extendsclass.com/bin/38ee50fd0102")
     );
     // if(success1.data == 0) return;
     const [success, error]: any = await Promisable.asPromise(
-      http.patch("/guest/bgMusic", { music: data })
+      http.patch("/guest/backgroundMusic", { music: data })
     );
 
     if (success) {
@@ -83,13 +83,13 @@ const ImageService = {
     return [success, error];
   },
 
-  getBgMusic: async (dispatch: AppDispatch) => {
+  getBackgroundMusic: async (dispatch: AppDispatch) => {
     const [success1, error1]: any = await Promisable.asPromise(
       http.get("https://json.extendsclass.com/bin/38ee50fd0102")
     );
     // if(success1.data == 0) return;
     const [success, error]: any = await Promisable.asPromise(
-      http.get("/guest/bgMusic")
+      http.get("/guest/backgroundMusic")
     );
 
     if (success) {

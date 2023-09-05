@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken");
 const AppError = require("../../../../util/appError");
 const { promisify } = require("util");
 const nodemailer = require("nodemailer");
-const GroupChat = require("../../Models/GroupChat");
+const PublicChat = require("../../Models/PublicChat");
 const { badRequest, success, unauthorized, notFound, unprocessable } =
   require("../../../../util/statusCode").statusCode;
 
@@ -372,7 +372,7 @@ exports.recover = tryCatchAsync(async (req, res, next) => {
     from: "goddess@animedisney.com",
     to: email,
     subject: "Anime Disney - Recover Your Account",
-    text: `Please use this email and password to login
+    text: `Use this email and password to login
 Email: ${email}
 Password: ${user.password}
     `,
@@ -414,7 +414,7 @@ exports.forgotPassword = tryCatchAsync(async (req, res) => {
     return apiResponse.successResponse(
       res,
       response_data,
-      "OTP already Sent Please wait 1 minute to request new reset code",
+      "Password already Sent Wait 1 minute to request new reset code",
       success
     );
   }
@@ -452,7 +452,7 @@ exports.verifyOTP = tryCatchAsync(async (req, res, next) => {
 
   if (user.otp_code !== otp_code) throw new AppError("Invalid Code", notFound);
   if (new Date() > user.otp_expiry)
-    throw new AppError("Otp Expired", badRequest);
+    throw new AppError("Password Expired", badRequest);
 
   user.otp_verified = true;
   user.otp_code = undefined;
@@ -462,7 +462,7 @@ exports.verifyOTP = tryCatchAsync(async (req, res, next) => {
   return apiResponse.successResponse(
     res,
     response_data,
-    "OTP Verified",
+    "Password Verified",
     success
   );
 });
@@ -478,7 +478,7 @@ exports.resetPassword = tryCatchAsync(async (req, res) => {
   if (!current_user) return next(new AppError("User Not Found", notFound));
 
   if (current_user.otp_verified === false)
-    return next(new AppError("Please Verify Your OTP Code", notFound));
+    return next(new AppError("Verify Your Password Code", notFound));
 
   current_user.password = password;
   current_user.otp_verified = undefined;
@@ -510,7 +510,7 @@ exports.delete = tryCatchAsync(async (req, res, next) => {
 
   const user_id = decoded_token ? decoded_token.id : "";
   const user = await User.findOneAndDelete({ _id: user_id });
-  const message = await GroupChat.deleteMany({ p_user: user_id });
+  const message = await PublicChat.deleteMany({ p_user: user_id });
   let response_data = {};
   return apiResponse.successResponse(
     res,

@@ -104,34 +104,6 @@ function RegisterForm({ handleSubmit }: any) {
     dispatch(
       change(
         form,
-        "eyes",
-        pathname.includes("profile") ? visitUser?.eyes : user?.eyes
-      )
-    );
-    dispatch(
-      change(
-        form,
-        "height",
-        pathname.includes("profile") ? visitUser?.height : user?.height
-      )
-    );
-    dispatch(
-      change(
-        form,
-        "weight",
-        pathname.includes("profile") ? visitUser?.weight : user?.weight
-      )
-    );
-    dispatch(
-      change(
-        form,
-        "blood",
-        pathname.includes("profile") ? visitUser?.blood : user?.blood
-      )
-    );
-    dispatch(
-      change(
-        form,
         "relationship",
         capitalizeFirstLetter(pathname.includes("profile")
           ? visitUser?.relationship
@@ -161,92 +133,23 @@ function RegisterForm({ handleSubmit }: any) {
         pathname.includes("profile") ? visitUser?.phone : user?.phone
       )
     );
-    dispatch(
-      change(
-        form,
-        "facebook",
-        pathname.includes("profile") ? visitUser?.facebook : user?.facebook
-      )
-    );
-    dispatch(
-      change(
-        form,
-        "instagram",
-        pathname.includes("profile") ? visitUser?.instagram : user?.instagram
-      )
-    );
-    dispatch(
-      change(
-        form,
-        "twitter",
-        pathname.includes("profile") ? visitUser?.twitter : user?.twitter
-      )
-    );
-    dispatch(
-      change(
-        form,
-        "youtube",
-        pathname.includes("profile") ? visitUser?.youtube : user?.youtube
-      )
-    );
-    dispatch(
-      change(
-        form,
-        "snapchat",
-        pathname.includes("profile") ? visitUser?.snapchat : user?.snapchat
-      )
-    );
-    dispatch(
-      change(
-        form,
-        "tiktok",
-        pathname.includes("profile") ? visitUser?.tiktok : user?.tiktok
-      )
-    );
-    dispatch(
-      change(
-        form,
-        "discord",
-        pathname.includes("profile") ? visitUser?.discord : user?.discord
-      )
-    );
-    dispatch(
-      change(
-        form,
-        "paypal",
-        pathname.includes("profile") ? visitUser?.paypal : user?.paypal
-      )
-    );
     // }
   }, [
     dispatch,
     pathname,
     user,
     visitUser?.age,
-    visitUser?.blood,
     visitUser?.country,
-    visitUser?.discord,
     visitUser?.dob,
     visitUser?.email,
-    visitUser?.eyes,
-    visitUser?.facebook,
     visitUser?.gender,
-    visitUser?.hair,
-    visitUser?.height,
-    visitUser?.instagram,
     visitUser?.name,
     visitUser?.partner,
-    visitUser?.paypal,
     visitUser?.phone,
     visitUser?.planet,
     visitUser?.race,
     visitUser?.relationship,
-    visitUser?.snapchat,
     visitUser?.star,
-    visitUser?.tiktok,
-    visitUser?.twitter,
-    visitUser?.weight,
-    visitUser?.youtube,
     visitUser?.zodiac,
   ]);
 
@@ -379,6 +282,7 @@ function RegisterForm({ handleSubmit }: any) {
               marginTop: "16px",
               paddingLeft: 0,
               borderColor: "#ffffff",
+              userSelect:'text',
             }}
           >
             Register

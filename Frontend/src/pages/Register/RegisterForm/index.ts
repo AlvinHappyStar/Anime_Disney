@@ -111,15 +111,15 @@ export const fields: ReduxFormField[] = [
     // validate: [required, email],
     component: InputRedux,
     cellProps: { md: 12 },
-    InputProps: { type: "email" },
+    InputProps: { type: "email", autoComplete: "off" },
   },
   {
     name: "password",
     label: "Password",
-    // validate: [required],
+    validate: [required],
     component: InputRedux,
     cellProps: { md: 12 },
-    InputProps: { showIcon: true, type: "password" },
+    InputProps: { showIcon: true, type: "password", autoComplete: "new-password" },
   },
   {
     name: "dob",

@@ -138,7 +138,7 @@ export default function Pictures() {
                                 </span>
                                 {/* <img
                                   src={BgIcon}
-                                  alt="BG"
+                                  alt="Background"
                                   onClick={() =>
                                     setBg(picture.url, picture._id)
                                   }
@@ -202,7 +202,7 @@ export default function Pictures() {
                         >Background</span>
                         {/* <img
                           src={BgIcon}
-                          alt="BG"
+                          alt="Background"
                           onClick={() => setBg(picture.url, picture._id)}
                         /> */}
                         <span

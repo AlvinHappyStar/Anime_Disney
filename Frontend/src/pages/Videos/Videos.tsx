@@ -166,7 +166,7 @@ export default function Videos() {
                                 </span>
                                 {/* <img
                                   src={BgIcon}
-                                  alt="BG"
+                                  alt="Background"
                                   onClick={() => setBg(video.url, video._id)}
                                 /> */}
                                 <span
@@ -248,7 +248,7 @@ export default function Videos() {
                         </span>
                         {/* <img
                           src={BgIcon}
-                          alt="BG"
+                          alt="Background"
                           onClick={() => setBg(video.url, video._id)}
                         /> */}
                         <span

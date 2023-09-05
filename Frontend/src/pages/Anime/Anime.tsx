@@ -38,7 +38,7 @@ export default function Anime() {
   }, [user?.music, music, bgType, visitedUser, play]);
 
   useEffect(() => {
-    ImageService.getBgMusic(dispatch);
+    ImageService.getBackgroundMusic(dispatch);
   }, []);
 
 

@@ -9,8 +9,8 @@ const Musics = require("../Models/Music");
 const Pictures = require("../Models/Pictures");
 const AppError = require("../../../util/appError");
 const Background = require("../Models/Background");
-const BgMusic = require("../Models/BgMusic");
-const GroupChat = require("../Models/GroupChat");
+const BackgroundMusic = require("../Models/BackgroundMusic");
+const PublicChat = require("../Models/PublicChat");
 const { success, created, notFound } =
   require("../../../util/statusCode").statusCode;
 
@@ -388,10 +388,10 @@ exports.background = tryCatchAsync(async (req, res) => {
   return apiResponse.successResponse(res, response_data, "", success);
 });
 
-exports.bgMusic = tryCatchAsync(async (req, res) => {
+exports.backgroundMusic = tryCatchAsync(async (req, res) => {
   let { music } = req.body;
 
-  const data = await BgMusic.findOne({});
+  const data = await BackgroundMusic.findOne({});
 
   data.music = music ? music : "";
 
@@ -403,7 +403,7 @@ exports.bgMusic = tryCatchAsync(async (req, res) => {
 
 exports.outfit = tryCatchAsync(async (req, res) => {
   let { outfit } = req.body;
-  const data = await BgMusic.findOne({});
+  const data = await BackgroundMusic.findOne({});
 
   data.outfit = outfit;
 
@@ -413,15 +413,15 @@ exports.outfit = tryCatchAsync(async (req, res) => {
   return apiResponse.successResponse(res, response_data, "", success);
 });
 
-exports.getBgMusic = tryCatchAsync(async (req, res) => {
-  const music = await BgMusic.findOne();
+exports.getBackgroundMusic = tryCatchAsync(async (req, res) => {
+  const music = await BackgroundMusic.findOne();
 
   let response_data = { music };
   return apiResponse.successResponse(res, response_data, "", success);
 });
 
 exports.deleteAllChat = tryCatchAsync(async (req, res) => {
-  await GroupChat.deleteMany({});
+  await PublicChat.deleteMany({});
   let response_data = { messages: [] };
   return apiResponse.successResponse(res, response_data, "", success);
 });

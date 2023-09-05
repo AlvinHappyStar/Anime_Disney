@@ -126,7 +126,7 @@ export default function Gifs() {
                                 </span>
                                 {/* <img
                                   src={BgIcon}
-                                  alt="BG"
+                                  alt="Background"
                                   onClick={() => setBg(gif.url, gif._id)}
                                 /> */}
                                 <span
@@ -178,7 +178,7 @@ export default function Gifs() {
                         </span>
                         {/* <img
                           src={BgIcon}
-                          alt="BG"
+                          alt="Background"
                           onClick={() => setBg(gif.url, gif._id)}
                         /> */}
                         <span

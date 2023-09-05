@@ -69,10 +69,10 @@ export default function Musics() {
     if (user) AuthService.background(data, dispatch);
   };
 
-  const setBgMusic = (music: any) => {
+  const setBackgroundMusic = (music: any) => {
     if (bgType === "private") AuthService.music(music.url, dispatch);
     else {
-      ImageService.bgMusic(music.url, dispatch);
+      ImageService.backgroundMusic(music.url, dispatch);
       dispatch(backgroundActions.setPlay(true));
     }
   };
@@ -143,7 +143,7 @@ export default function Musics() {
                               ""
                             ) : (
                               <>
-                                <span onClick={() => setBgMusic(music)}>
+                                <span onClick={() => setBackgroundMusic(music)}>
                                   Background
                                 </span>
                                 <span
@@ -192,12 +192,12 @@ export default function Musics() {
                       <p className="content-icons">
                         {/* <img src={ViewIcon} alt="View" /> */}
                         <span>View</span>
-                        <span onClick={() => setBgMusic(music)}>
+                        <span onClick={() => setBackgroundMusic(music)}>
                           Background
                         </span>
                         {/* <img
                           src={BgIcon}
-                          alt="BG"
+                          alt="Background"
                           onClick={() => setBg(music.url, music._id)}
                         /> */}
                         <span

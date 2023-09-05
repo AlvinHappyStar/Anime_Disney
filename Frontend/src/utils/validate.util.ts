@@ -127,7 +127,7 @@ export const phoneSimple = (value: any) => {
 export const phoneMUI = (value: any) => {
 	return value?.formattedValue?.length === value?.data?.format?.length
 		? undefined
-		: "Please Enter Complete Phone Number";
+		: "Enter Complete Phone Number";
 };
 
 export const emailOrPhone = (value: any) => {

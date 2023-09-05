@@ -4,7 +4,7 @@ import Button from "components/atoms/Button";
 import ReduxFormFields from "components/molecules/ReduxFormFields";
 function LoginForm({ handleSubmit }: any) {
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} autoComplete="off">
       <div
         style={{
           overflowY: "auto",
@@ -21,6 +21,7 @@ function LoginForm({ handleSubmit }: any) {
             marginTop: "16px",
             paddingLeft: 0,
             borderColor: "#ffffff",
+            userSelect: 'text',
           }}
         >
           Login

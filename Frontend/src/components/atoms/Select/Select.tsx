@@ -31,6 +31,7 @@ const CssTextField = styled(TextField)({
   "& .MuiInputLabel-root": {
     color: "white",
     top: "-6px",
+    userSelect: 'text',
   },
   "& .MuiFilledInput-root:after, .MuiFilledInput-root:before": {
     display: "none",
@@ -69,7 +70,7 @@ export default function Select({
       select
       fullWidth
       variant="filled"
-      SelectProps={{ MenuProps: { sx: { maxHeight: "535px", marginTop: '1px' } } }}
+      SelectProps={{ MenuProps: { sx: { maxHeight: "535px"} } }}
       {...rest}
       disabled={disabledOnUpdate && id ? true : disabled}
     >

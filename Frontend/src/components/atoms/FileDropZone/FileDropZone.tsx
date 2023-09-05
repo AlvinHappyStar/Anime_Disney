@@ -10,7 +10,7 @@ import cancelImg from 'assets/remove.svg'
 //@ts-ignore
 import removeImg from 'assets/remove.svg'
 //@ts-ignore
-import restartImg from 'assets/restart.svg'
+import restartImg from 'assets/restart.png'
 
 
 import UploadIcon from "assets/Upload.png";

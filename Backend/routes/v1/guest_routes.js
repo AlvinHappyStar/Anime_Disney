@@ -14,8 +14,8 @@ router.get("/background", guest_controller.background);
 router.patch("/updateBackground", guest_controller.updateBackground);
 
 router.patch("/outfit", guest_controller.outfit);
-router.patch("/bgMusic", guest_controller.bgMusic);
-router.get("/bgMusic", guest_controller.getBgMusic);
+router.patch("/backgroundMusic", guest_controller.backgroundMusic);
+router.get("/backgroundMusic", guest_controller.getBackgroundMusic);
 
 router.post("/music", guest_controller.addMusic);
 router.get("/musics", guest_controller.getAllMusics);
