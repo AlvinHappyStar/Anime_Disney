@@ -10,7 +10,8 @@ dotenv.config({ path: "./config.env" });
 const port = process.env.PORT || 3001;
 global.Services = path.resolve("./api/v1/Controllers/Services");
 
-const DB = process.env.DATABASE.replace("<PASSWORD>", process.env.DB_Password);
+// const DB = process.env.DATABASE.replace("<PASSWORD>", process.env.DB_Password);
+const DB = process.env.DATABASE;
 const mongoose_options = {
   useNewUrlParser: true,
   useCreateIndex: true,

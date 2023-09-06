@@ -248,6 +248,7 @@ export default function FileDropZone({ type, uploadType }: any) {
               fontSize: "16px",
               fontWeight: "normal",
               textTransform: "capitalize",
+              overflow:'hidden'
             }}
           >
             {/* Drag and Drop or Browse to */}

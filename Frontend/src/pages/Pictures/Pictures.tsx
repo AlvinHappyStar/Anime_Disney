@@ -150,6 +150,7 @@ export default function Pictures() {
                                       dispatch
                                     )
                                   }
+                                  
                                 >
                                   Delete
                                 </span>

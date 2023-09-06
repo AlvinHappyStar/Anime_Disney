@@ -128,7 +128,8 @@ export default function Chat() {
                       paddingLeft: "4px",
                       cursor: "pointer",
                       whiteSpace: "nowrap",
-                      marginTop: "8px"
+                      marginTop: "8px",
+                      overflow:'hidden',
                     }}
                     onClick={() => {
                       if (user && !chat && message?.p_user?._id != undefined) {
@@ -159,7 +160,7 @@ export default function Chat() {
                   style={{ maxWidth: edit === index ? "100%" : "auto" }}
                 >
                   <div className="bubble-inner">
-                    <p style={{ textAlign: "right" }}>
+                    <p style={{ textAlign: "right", overflow:'hidden' }}>
                       <Link
                         to={`/profile/${chat
                           ? message.fromSelf
@@ -199,7 +200,8 @@ export default function Chat() {
                             lineHeight: 1.4,
                             wordBreak: "break-all",
                             padding: 0,
-                            maxWidth: "800px"
+                            maxWidth: "800px",
+                            overflow:'hidden'
                           }}
                           dangerouslySetInnerHTML={{
                             __html: makeUrlsClickable(message.message.replace(/\n/g, '<br>')),
@@ -212,7 +214,7 @@ export default function Chat() {
                       <p>
                         {moment(message.createdAt).format("h:mm a")}&nbsp;&nbsp;
                       </p>
-                      <p>{moment(message.createdAt).format("DD/MM/yyyy")} </p>
+                      <p style={{overflow:'hidden'}}>{moment(message.createdAt).format("DD/MM/yyyy")} </p>
                     </div>
                   </div>
                 </div>

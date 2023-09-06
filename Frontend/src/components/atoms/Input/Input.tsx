@@ -30,6 +30,9 @@ const CssTextField = styled(TextField)({
     height: "1em",
     paddingTop: "20px",
     color: "white !important",
+    textOverflow:'ellipsis',
+    userSelect:'text',
+    overflow:'hidden',
   },
   "& .MuiInputLabel-root": {
     color: "white",

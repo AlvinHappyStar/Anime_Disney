@@ -52,7 +52,8 @@ export default function User() {
                     padding: 0,
                     // marginTop: "2px",
                     marginBottom: "0.83em",
-                    userSelect: "text",
+                    userSelect: 'text',
+                    overflow: 'hidden',
                     marginRight: "32px"
                   }}
                 >
@@ -71,8 +72,9 @@ export default function User() {
                     padding: 0,
                     // marginTop: "2px",
                     marginBottom: "0.83em",
-                    userSelect: "text",
-                    marginRight: "32px"
+                    marginRight: "32px",
+                    userSelect: 'text',
+                    overflow: 'hidden',
                   }}
                 >
                   Register
@@ -90,7 +92,8 @@ export default function User() {
                     padding: 0,
                     // marginTop: "2px",
                     marginBottom: "0.83em",
-                    userSelect: "text",
+                    userSelect: 'text',
+                    overflow: 'hidden',
                   }}
                 >
                   Recovery
@@ -132,7 +135,8 @@ export default function User() {
                     padding: 0,
                     // marginTop: "2px",
                     marginBottom: "0.83em",
-                    userSelect: "text",
+                    userSelect: 'text',
+                    overflow: 'hidden',
                     marginRight: "32px"
                   }}
                 >
@@ -149,7 +153,8 @@ export default function User() {
                   padding: 0,
                   // marginTop: "2px",
                   marginBottom: "0.83em",
-                  userSelect: "text",
+                  userSelect: 'text',
+                  overflow: 'hidden',
                   marginRight: "32px"
                 }}>
                   Save
@@ -174,7 +179,8 @@ export default function User() {
                     padding: 0,
                     // marginTop: "2px",
                     marginBottom: "0.83em",
-                    userSelect: "text",
+                    userSelect: 'text',
+                    overflow: 'hidden',
                     marginRight: "32px"
                   }}
                 // disableElevation
@@ -195,7 +201,8 @@ export default function User() {
                     padding: 0,
                     // marginTop: "2px",
                     marginBottom: "0.83em",
-                    userSelect: "text",
+                    userSelect: 'text',
+                    overflow: 'hidden',
                     // marginRight: "32px"
                   }}
                 >

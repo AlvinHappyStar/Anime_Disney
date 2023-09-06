@@ -21,10 +21,12 @@ function RecoveryForm({ handleSubmit }: any) {
             marginTop: "16px",
             paddingLeft: 0,
             borderColor: "#ffffff",
-            userSelect: 'text',
           }}
         >
-          Recover
+          <span style={{
+              userSelect: 'text',
+              overflow: 'hidden',
+            }}>Recover</span>
         </Button>
       </div>
     </form>

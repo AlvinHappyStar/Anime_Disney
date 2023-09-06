@@ -203,9 +203,12 @@ progress {
   margin-top: 0;
   line-height: 15px;
   font-family: "Varela Round", sans-serif;
+  gap: 18px;
+  display: flex;
 }
 .heading span {
   cursor: pointer;
+  overflow: hidden;
 }
 .heading span.active {
   font-weight: 600;
@@ -377,6 +380,7 @@ progress {
 }
 .content-icons span {
   cursor: pointer;
+  overflow: hidden;
 }
 
 .upload-box {

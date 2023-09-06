@@ -10,6 +10,7 @@ export default function GridFormSection({ label, fieldsArray }: any) {
 						whiteSpace: "nowrap",
 						paddingRight: "15px",
 						fontWeight: "500",
+						overflow:'hidden',
 					}}
 				>
 					{label}

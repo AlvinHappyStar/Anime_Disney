@@ -190,7 +190,7 @@ export default function Home() {
               onClick={() => dispatch(authActions.setTab("online"))}
             >
               {" "}
-              Online ({online?.length ?? 0}){" "}
+              Online ({online?.length ?? 0})
             </span>
 
             <span

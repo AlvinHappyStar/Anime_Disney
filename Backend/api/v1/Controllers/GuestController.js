@@ -369,6 +369,8 @@ exports.updateBackground = tryCatchAsync(async (req, res) => {
   let { background, property, video } = req.body;
 
   const data = await Background.findOne({});
+
+  console.log(data);
   
   data.video = video ? video : "";
   data.property = property ? property : "";
@@ -383,6 +385,7 @@ exports.updateBackground = tryCatchAsync(async (req, res) => {
 
 exports.background = tryCatchAsync(async (req, res) => {
   const background = await Background.findOne({});
+  console.log("background", background)
 
   let response_data = { background };
   return apiResponse.successResponse(res, response_data, "", success);

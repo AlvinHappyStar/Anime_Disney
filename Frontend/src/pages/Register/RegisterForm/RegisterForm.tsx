@@ -191,8 +191,9 @@ function RegisterForm({ handleSubmit }: any) {
               padding: 0,
               // marginTop: "2px",
               marginBottom: "0.83em",
-              userSelect: "text",
-              marginRight: "32px"
+              marginRight: "32px",
+              userSelect: 'text',
+              overflow: 'hidden',
             }}
           >
             Logout
@@ -208,8 +209,9 @@ function RegisterForm({ handleSubmit }: any) {
             padding: 0,
             // marginTop: "2px",
             marginBottom: "0.83em",
-            userSelect: "text",
-            marginRight: "32px"
+            marginRight: "32px",
+            userSelect: 'text',
+            overflow: 'hidden',
           }}>
             Save
           </button>
@@ -235,8 +237,9 @@ function RegisterForm({ handleSubmit }: any) {
               padding: 0,
               // marginTop: "2px",
               marginBottom: "0.83em",
-              userSelect: "text",
-              marginRight: "32px"
+              marginRight: "32px",
+              userSelect: 'text',
+              overflow: 'hidden',
             }}
           // disableElevation
           >
@@ -256,8 +259,9 @@ function RegisterForm({ handleSubmit }: any) {
               padding: 0,
               // marginTop: "2px",
               marginBottom: "0.83em",
-              userSelect: "text",
               // marginRight: "32px"
+              userSelect: 'text',
+              overflow: 'hidden',
             }}
           >
             Upload
@@ -274,7 +278,7 @@ function RegisterForm({ handleSubmit }: any) {
         <ReduxFormFields fields={fields} />
         {!user && !pathname.includes("profile") && (
           <Button
-            variant="text"
+            // variant="text"
             type="submit"
             disableElevation
             style={{
@@ -282,10 +286,12 @@ function RegisterForm({ handleSubmit }: any) {
               marginTop: "16px",
               paddingLeft: 0,
               borderColor: "#ffffff",
-              userSelect:'text',
             }}
           >
-            Register
+            <span style={{
+              userSelect: 'text',
+              overflow: 'hidden',
+            }}>Register</span>
           </Button>
         )}
         {user || pathname.includes("profile") ? (

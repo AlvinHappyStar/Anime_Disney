@@ -76,8 +76,9 @@ export default function Anime() {
             padding: 0,
             // marginTop: "2px",
             marginBottom: "0.83em",
-            userSelect: "text",
-            textAlign: "start"
+            textAlign: "start",
+            userSelect: 'text',
+            overflow: 'hidden',
           }}
         >
           Donate
@@ -128,7 +129,8 @@ export default function Anime() {
               color: "white",
               padding: 0,
               marginBottom: "0.83em",
-              userSelect: "text",
+              userSelect: 'text',
+              overflow: 'hidden',
             }}
           >
             Public
@@ -148,7 +150,8 @@ export default function Anime() {
               color: "white",
               padding: 0,
               marginBottom: "0.83em",
-              userSelect: "text",
+              userSelect: 'text',
+              overflow: 'hidden',
             }}
           >
             Private

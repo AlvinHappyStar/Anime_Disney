@@ -21,7 +21,7 @@ export default function SelectType() {
   const videoType = useAppSelector((state) => state.video.type);
 
   return (
-    <div style={{ display: "flex", alignItems: "center", gap: "35px", marginLeft:'-1px'}}>
+    <div style={{ display: "flex", alignItems: "center", gap: "35px", marginLeft: '-1px' }}>
       <button
         onClick={() => {
           dispatch(gifActions.setType("public"));
@@ -40,7 +40,8 @@ export default function SelectType() {
           padding: 0,
           // marginTop: "2px",
           marginBottom: "0.83em",
-          userSelect: "text",
+          userSelect: 'text',
+          overflow: 'hidden',
         }}
       >
         Public
@@ -66,7 +67,8 @@ export default function SelectType() {
           padding: 0,
           // marginTop: "2px",
           marginBottom: "0.83em",
-          userSelect: "text",
+          userSelect: 'text',
+          overflow: 'hidden',
         }}
       >
         Private
@@ -84,7 +86,8 @@ export default function SelectType() {
           padding: 0,
           // marginTop: "2px",
           marginBottom: "0.83em",
-          userSelect: "text",
+          userSelect: 'text',
+          overflow: 'hidden',
         }}
         onClick={() => {
           dispatch(tabActions.setUpload(true));
@@ -105,7 +108,8 @@ export default function SelectType() {
           padding: 0,
           // marginTop: "2px",
           marginBottom: "0.83em",
-          userSelect: "text",
+          userSelect: 'text',
+          overflow: 'hidden',
         }}
         onClick={() => {
 

@@ -60,7 +60,7 @@ export default function Members({ userId }: any) {
                 }
                 alt="User"
               /> */}
-                  <p style={{ textTransform: "capitalize" }}>Anime</p>
+                  <p style={{ textTransform: "capitalize", overflow:'hidden' }}>Anime</p>
                 </div>
 
               </li>
@@ -115,7 +115,7 @@ export default function Members({ userId }: any) {
                 }
                 alt="User"
               /> */}
-                  <p style={{ textTransform: "capitalize" }}>{user.name}</p>
+                  <p style={{ textTransform: "capitalize", overflow:'hidden', }}>{user.name}</p>
                 </div>
                 <Link
                   to={`/profile/${user._id}`}
@@ -129,6 +129,7 @@ export default function Members({ userId }: any) {
                     textDecoration: "none",
                     fontSize: "16px",
                     fontFamily: "'Varela Round', sans-serif",
+                    overflow:'hidden'
                   }}
                 >
                   {user.race}

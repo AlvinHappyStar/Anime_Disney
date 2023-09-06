@@ -172,6 +172,8 @@ export default function MusicDropZone({ musicType }: any) {
               fontWeight: "normal",
               textTransform: "capitalize",
               paddingTop: '2px',
+              userSelect: 'text',
+              overflow: 'hidden',
             }}
           >
             Upload Music

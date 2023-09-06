@@ -23,31 +23,31 @@ export default function Header() {
                   dispatch(tabActions.setTab("chat"));
                   dispatch(authActions.setChat(null));
                 }}
-                style={{ fontWeight: tab === "chat" ? "900" : "500" }}
+                style={{ fontWeight: tab === "chat" ? "900" : "500",overflow:'hidden', paddingRight: '0px' }}
               >
                 Chat
               </li>
               <li
                 onClick={() => dispatch(tabActions.setTab("gif"))}
-                style={{ fontWeight: tab === "gif" ? "900" : "500" }}
+                style={{ fontWeight: tab === "gif" ? "900" : "500",overflow:'hidden', paddingRight: '0px' }}
               >
                 Gif
               </li>
               <li
                 onClick={() => dispatch(tabActions.setTab("picture"))}
-                style={{ fontWeight: tab === "picture" ? "900" : "500" }}
+                style={{ fontWeight: tab === "picture" ? "900" : "500", overflow:'hidden', paddingRight: '0px' }}
               >
                 Picture
               </li>
               <li
                 onClick={() => dispatch(tabActions.setTab("video"))}
-                style={{ fontWeight: tab === "video" ? "900" : "500" }}
+                style={{ fontWeight: tab === "video" ? "900" : "500", overflow:'hidden', paddingRight: '0px' }}
               >
                 Video
               </li>
               <li
                 onClick={() => dispatch(tabActions.setTab("music"))}
-                style={{ fontWeight: tab === "music" ? "900" : "500" }}
+                style={{ fontWeight: tab === "music" ? "900" : "500", overflow:'hidden', paddingRight: '0px' }}
               >
                 Music
               </li>
@@ -56,7 +56,7 @@ export default function Header() {
                   navigate("/");
                   dispatch(tabActions.setTab("user"));
                 }}
-                style={{ fontWeight: tab === "user" ? "900" : "500" }}
+                style={{ fontWeight: tab === "user" ? "900" : "500", overflow:'hidden', paddingRight: '0px' }}
               >
                 User
               </li>

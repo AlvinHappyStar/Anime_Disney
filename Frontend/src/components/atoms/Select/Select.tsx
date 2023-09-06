@@ -15,6 +15,7 @@ const CssTextField = styled(TextField)({
     borderRadius: "0px",
     height: '47px',
     border: "1px solid #ffffff",
+    userSelect: 'text',
     // '&:hover fieldset': {
     //   borderColor: '#fff', // Set your desired outline color here
     // },
@@ -27,6 +28,7 @@ const CssTextField = styled(TextField)({
     color: "white",
     paddingTop: "16px",
     paddingBottom: "5px",
+    userSelect:'text',
   },
   "& .MuiInputLabel-root": {
     color: "white",
@@ -80,6 +82,7 @@ export default function Select({
           value={value}
           disableTouchRipple
           selected={index === selectedIndex}
+          // style={{userSelect:'text'}}
           onClick={() => setSelectedIndex(index)}
         >
           {label}

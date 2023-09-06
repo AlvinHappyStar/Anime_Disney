@@ -54,9 +54,10 @@ function ChatBoxForm({ handleSubmit }: any) {
           border: "2px solid #ffffff",
           borderLeft: 0,
           userSelect: 'text',
+          overflow: 'hidden',
         }}
       >
-        Send
+        Send        
       </button>
     </form>
   );

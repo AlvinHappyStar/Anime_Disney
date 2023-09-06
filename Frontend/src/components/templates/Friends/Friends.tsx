@@ -24,6 +24,7 @@ export default function Friends() {
             cursor: "pointer",
             whiteSpace: "nowrap",
             fontWeight: !chat && tab === "chat" ? 600 : "",
+            overflow:'hidden',
           }}
           onClick={() => {
             dispatch(messageActions.setMessages([]));
@@ -43,6 +44,7 @@ export default function Friends() {
             margin: 0,
             cursor: "pointer",
             whiteSpace: "nowrap",
+            overflow:'hidden',
           }}
           onClick={() => {
             if (chat) {
@@ -61,7 +63,7 @@ export default function Friends() {
             className={"friend-tag"}
           >
             <p
-              style={{ margin: 0, cursor: "pointer", whiteSpace: "nowrap", fontWeight: friend?._id === chat?._id ? 600 : "", }}
+              style={{ margin: 0, cursor: "pointer", whiteSpace: "nowrap", fontWeight: friend?._id === chat?._id ? 600 : "", overflow:'hidden', }}
               onClick={() => {
                 dispatch(messageActions.setMessages([]));
                 dispatch(authActions.setChat(friend));

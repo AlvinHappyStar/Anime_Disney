@@ -21,10 +21,12 @@ function LoginForm({ handleSubmit }: any) {
             marginTop: "16px",
             paddingLeft: 0,
             borderColor: "#ffffff",
-            userSelect: 'text',
           }}
         >
-          Login
+          <span style={{
+              userSelect: 'text',
+              overflow: 'hidden',
+            }}>Login</span>
         </Button>
       </div>
     </form>
