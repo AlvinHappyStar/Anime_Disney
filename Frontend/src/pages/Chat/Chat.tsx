@@ -211,7 +211,7 @@ export default function Chat() {
                       )}
                     </div>
                     <div className="race-chat">
-                      <p>
+                      <p style={{overflow:'hidden'}}>
                         {moment(message.createdAt).format("h:mm a")}&nbsp;&nbsp;
                       </p>
                       <p style={{overflow:'hidden'}}>{moment(message.createdAt).format("DD/MM/yyyy")} </p>
