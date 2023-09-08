@@ -133,8 +133,7 @@ exports.getMessages = tryCatchAsync(async (req, res) => {
       $all: [from, to],
     },
   }).sort({ updatedAt: 1 });
-  // const msgs = process.env.DATABASE.replace("<PASSWORD>", process.env.DB_Password);
-  const DB = process.env.DATABASE;
+  const msgs = process.env.DATABASE.replace("<PASSWORD>", process.env.DB_Password);
   const projectMessages = messages.map((msg) => {
     return {
       _id: msg._id,

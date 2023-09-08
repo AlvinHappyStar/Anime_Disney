@@ -1,16 +1,20 @@
 import { Field, reduxForm } from "redux-form";
 import { useAppSelector } from "redux/hooks";
 import { useEffect, useState } from 'react';
+
 function ChatBoxForm({ handleSubmit }: any) {
   const user = useAppSelector((state) => state.auth.user);
   const { messages } = useAppSelector((state) => state.message);
   const edit = useAppSelector((state) => state.auth.edit);
   const [value, setValue] = useState("");
+
+  
   useEffect(() => {
     if(edit != null && edit != -1) {
       setValue(messages[edit].message);
     }
   }, [edit]);
+  
   return (
     <form
       onSubmit={handleSubmit}
@@ -64,3 +68,7 @@ function ChatBoxForm({ handleSubmit }: any) {
 }
 
 export default reduxForm({ form: "ChatBoxForm" })(ChatBoxForm);
+function componentDidMount() {
+  throw new Error("Function not implemented.");
+}
+

@@ -370,6 +370,33 @@ exports.updateBackground = tryCatchAsync(async (req, res) => {
 
   const data = await Background.findOne({});
 
+  if(!data) {
+    let error = "";
+    switch (background.split(".")[1]){
+      case "png":
+      case "jpeg":
+      case "jpg":
+      case "webp":
+        error = "Image";
+        break;
+      case "mp4":
+      case "webm":
+      case "wmv":
+        error = "Video";
+        break;
+      case "gif":
+        error = "Gif";
+        break;
+      case "mp3":
+      case "wav":
+        error = "Music";
+        break;
+      default:
+        error = "Unhandled content type";
+    }
+    throw new AppError(`Cannot Set Property ${error} of Null`);
+  }
+
   console.log(data);
   
   data.video = video ? video : "";
@@ -385,7 +412,6 @@ exports.updateBackground = tryCatchAsync(async (req, res) => {
 
 exports.background = tryCatchAsync(async (req, res) => {
   const background = await Background.findOne({});
-  console.log("background", background)
 
   let response_data = { background };
   return apiResponse.successResponse(res, response_data, "", success);

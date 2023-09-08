@@ -39,8 +39,8 @@ export default function Profile() {
     idRef.current = id;  // Update the ref's value whenever id changes
   }, [id]);
   useEffect(() => {
-    // socket.current = io("http://95.216.22.143:3001");
-    socket.current = io("https://api.animedisney.com");
+    socket.current = io("http://95.216.22.143:3001");
+    // socket.current = io("https://api.animedisney.com");
     socket.current.on("photoUpdate", () => {
       if (idRef.current) {
         console.log("userIdRef:", idRef.current);
