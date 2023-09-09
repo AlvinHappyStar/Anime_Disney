@@ -141,7 +141,7 @@ exports.getAllPictures = tryCatchAsync(async (req, res) => {
 
 exports.deleteAllPictures = tryCatchAsync(async (req, res) => {
   const { id } = req.body;
-  
+
   if (id == null) {
     await Pictures.deleteMany({ type: "public" });
   } else {
@@ -365,45 +365,25 @@ exports.updateMusic = tryCatchAsync(async (req, res) => {
 });
 
 exports.updateBackground = tryCatchAsync(async (req, res) => {
-  
+
   let { background, property, video } = req.body;
 
   const data = await Background.findOne({});
 
-  if(!data) {
-    let error = "";
-    switch (background.split(".")[1]){
-      case "png":
-      case "jpeg":
-      case "jpg":
-      case "webp":
-        error = "Image";
-        break;
-      case "mp4":
-      case "webm":
-      case "wmv":
-        error = "Video";
-        break;
-      case "gif":
-        error = "Gif";
-        break;
-      case "mp3":
-      case "wav":
-        error = "Music";
-        break;
-      default:
-        error = "Unhandled content type";
-    }
-    throw new AppError(`Cannot Set Property ${error} of Null`);
+  if (!data) {
+    const background_data = await Background.create(req.body);
+
+    let response_create_data = { background: background_data };
+    return apiResponse.successResponse(res, response_create_data, "", success);
   }
 
   console.log(data);
-  
+
   data.video = video ? video : "";
   data.property = property ? property : "";
   data.background = background ? background : "";
 
-  
+
   await data.save();
 
   let response_data = { background: data };
@@ -421,6 +401,13 @@ exports.backgroundMusic = tryCatchAsync(async (req, res) => {
   let { music } = req.body;
 
   const data = await BackgroundMusic.findOne({});
+
+  if (!data) {
+    const background_data = await BackgroundMusic.create(req.body);
+
+    let response_create_data = { music: background_data };
+    return apiResponse.successResponse(res, response_create_data, "", success);
+  }
 
   data.music = music ? music : "";
 

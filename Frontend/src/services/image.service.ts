@@ -44,9 +44,11 @@ const ImageService = {
 
     if (success) {
       const { background } = success.data.data;
-      dispatch?.(backgroundActions.setBackground(background.background));
-      dispatch?.(backgroundActions.setProperty(background.property));
-      dispatch?.(backgroundActions.setVideo(background.video));
+      if (background != null) {
+        dispatch?.(backgroundActions.setBackground(background.background));
+        dispatch?.(backgroundActions.setProperty(background.property));
+        dispatch?.(backgroundActions.setVideo(background.video));
+      }
     }
 
     return [success, error];
@@ -76,8 +78,10 @@ const ImageService = {
     if (success) {
       const { music } = success.data.data;
 
-      SocketService.sendMusic(music.music);
-      dispatch?.(backgroundActions.setMusic(music.music));
+      if (music != null){
+        SocketService.sendMusic(music.music);
+        dispatch?.(backgroundActions.setMusic(music.music));
+      }      
     }
 
     return [success, error];
@@ -94,8 +98,12 @@ const ImageService = {
 
     if (success) {
       const { music } = success.data.data;
-      dispatch?.(backgroundActions.setMusic(music.music));
-      dispatch?.(backgroundActions.setOutfit(music.outfit));
+
+      if(music != null){
+        dispatch?.(backgroundActions.setMusic(music.music));
+        dispatch?.(backgroundActions.setOutfit(music.outfit));
+      }
+      
     }
 
     return [success, error];

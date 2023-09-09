@@ -127,6 +127,6 @@ const userSchema = new mongoose.Schema(
 //   this.passwordResetExpires = Date.now() + 10 * 60 * 1000;
 //   return reset_token;
 // };
-const User = mongoose.model("User", userSchema, 'users');
+const User = mongoose.model("User", userSchema, 'user');
 
 module.exports = User;

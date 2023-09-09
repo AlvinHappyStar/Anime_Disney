@@ -35,7 +35,7 @@ export default function Members({ userId }: any) {
     <div>
       <ul className="members-list">
         {tab != "friends"  && online != undefined && online.map((onlineUser: any, index: number) => {
-          if (onlineUser.includes("Guest")) {
+          if (onlineUser.includes("Guest") && tab != "registered") {
             return (
               <li
 

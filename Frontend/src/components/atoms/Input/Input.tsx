@@ -33,11 +33,13 @@ const CssTextField = styled(TextField)({
     textOverflow:'ellipsis',
     userSelect:'text',
     overflow:'hidden',
+    fontSize: '16px',
   },
   "& .MuiInputLabel-root": {
     color: "white",
-    top: "-6px",
+    top: "-4px",
     userSelect: 'text',
+    fontSize: '16px',
   },
   "& .MuiFilledInput-root:after, .MuiFilledInput-root:before": {
     display: "none",

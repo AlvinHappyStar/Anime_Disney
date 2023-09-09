@@ -83,7 +83,7 @@ export default function App() {
             ? visitedUser?.background
             : user
             ? user?.background
-            : background
+            : background 
         }")`,
         backgroundSize: `${
           property === "stretched"

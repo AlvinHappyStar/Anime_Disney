@@ -32,8 +32,8 @@ export default function Anime() {
       audioRef.current.load();
       // Set the current time before playing
       audioRef.current.currentTime = currentTime;
-      if (play) audioRef.current.play();
-      else audioRef.current.pause();
+      // if (play) audioRef.current.play();
+      // else audioRef.current.pause();
     }
   }, [user?.music, music, bgType, visitedUser, play]);
 
@@ -95,13 +95,14 @@ export default function Anime() {
         >
           <source
             src={
+              music ? 
               visitedUser
                 ? `${process.env.REACT_APP_FILE_URL}/${bgType === "private" ? visitedUser?.music : music
                 }`
                 : user
                   ? `${process.env.REACT_APP_FILE_URL}/${bgType === "private" ? user?.music : music
                   }`
-                  : `${process.env.REACT_APP_FILE_URL}/${music}`
+                  : `${process.env.REACT_APP_FILE_URL}/${music}` : 'none'
             }
             type="audio/mpeg"
           />

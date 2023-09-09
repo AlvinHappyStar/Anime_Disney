@@ -24,6 +24,6 @@ const musicsSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const Musics = mongoose.model("Musics", musicsSchema, 'musics');
+const Musics = mongoose.model("Musics", musicsSchema, 'music');
 
 module.exports = Musics;

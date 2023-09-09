@@ -23,6 +23,6 @@ const gifsSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const Gifs = mongoose.model("Gifs", gifsSchema, 'gifs');
+const Gifs = mongoose.model("Gifs", gifsSchema, 'gif');
 
 module.exports = Gifs;
