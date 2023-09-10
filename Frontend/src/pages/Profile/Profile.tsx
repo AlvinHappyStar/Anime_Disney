@@ -42,7 +42,7 @@ export default function Profile() {
     socket.current = io("http://95.216.22.143:3001");
     // socket.current = io("https://api.animedisney.com");
     socket.current.on("photoUpdate", () => {
-      if (idRef.current) {
+      if (idRef.current && idRef.current != 'undefined') {
         console.log("userIdRef:", idRef.current);
         UsersService.getUser(idRef.current);
       }
@@ -55,7 +55,8 @@ export default function Profile() {
       console.log("userId:", userId);
       setId(userId);
     }
-    UsersService.getUser(userId);
+    if (userId != 'undefined')
+        UsersService.getUser(userId);
     // Polling logic here
     // const interval = setInterval(() => {
     //   UsersService.getUserFriend(userId);

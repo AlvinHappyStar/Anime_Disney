@@ -19,7 +19,8 @@ function RegisterForm({ handleSubmit }: any) {
   const { pathname } = useLocation();
   const [partnerOptions, setPartnerOptions] = useState<any[]>([]);
   const user = useAppSelector((state) => state.auth.user);
-  const visitUser = useAppSelector((state) => state.user.user);
+  const currentTime = new Date();
+  const visitUser = useAppSelector((state) => state.user.user);  
   const dob = useAppSelector((state) => state.form?.[form]?.values?.dob);
   const relation = useAppSelector(
     (state) => state.form?.[form]?.values?.partner
@@ -28,9 +29,13 @@ function RegisterForm({ handleSubmit }: any) {
     if (!string || typeof string !== 'string') return '';
     return string.charAt(0).toUpperCase() + string.slice(1);
   };
+  
   useEffect(() => {
-    if (!dob?.date) return;
-    let response = dobCalc(dob?.date);
+    let response;
+    if (!dob?.date)
+      response = dobCalc(currentTime.toLocaleDateString());
+    else
+      response = dobCalc(dob?.date);
 
     dispatch(change(form, "age", response?.age));
     dispatch(change(form, "zodiac", response?.zodiac));
@@ -44,21 +49,21 @@ function RegisterForm({ handleSubmit }: any) {
       change(
         form,
         "name",
-        capitalizeFirstLetter(pathname.includes("profile") ? visitUser?.name : user?.name)
+        capitalizeFirstLetter(pathname.includes("profile") ? !visitUser? "Anime" : visitUser?.name : user?.name)
       )
     );
     dispatch(
       change(
         form,
         "race",
-        pathname.includes("profile") ? visitUser?.race : user?.race
+        pathname.includes("profile") ? !visitUser? "Anime" : visitUser?.race : user?.race
       )
     );
     dispatch(
       change(
         form,
         "gender",
-        pathname.includes("profile") ? visitUser?.gender : user?.gender
+        pathname.includes("profile") ? !visitUser? "female" : visitUser?.gender : user?.gender
       )
     );
     dispatch(
@@ -70,7 +75,7 @@ function RegisterForm({ handleSubmit }: any) {
     );
     dispatch(
       change(form, "dob", {
-        date: pathname.includes("profile") ? visitUser?.dob : user?.dob,
+        date: pathname.includes("profile") ? !visitUser? currentTime.toLocaleDateString() : visitUser?.dob : user?.dob,
       })
     );
     dispatch(

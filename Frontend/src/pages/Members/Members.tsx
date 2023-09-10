@@ -62,6 +62,23 @@ export default function Members({ userId }: any) {
               /> */}
                   <p style={{ textTransform: "capitalize", overflow:'hidden' }}>Anime</p>
                 </div>
+                <Link
+                  to={`/profile/undefined`}
+                  onClick={() => {
+                    dispatch(tabActions.setTab("user"));
+                    dispatch(backgroundActions.setBgType("private"));
+                  }}
+                  style={{
+                    color: "#ffffff",
+                    textTransform: "capitalize",
+                    textDecoration: "none",
+                    fontSize: "16px",
+                    fontFamily: "'Varela Round', sans-serif",
+                    overflow:'hidden'
+                  }}
+                >
+                  Anime
+                </Link>
 
               </li>
             )

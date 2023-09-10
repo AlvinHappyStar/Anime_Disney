@@ -32,8 +32,8 @@ export default function Anime() {
       audioRef.current.load();
       // Set the current time before playing
       audioRef.current.currentTime = currentTime;
-      // if (play) audioRef.current.play();
-      // else audioRef.current.pause();
+      if (play) audioRef.current.play();
+      else audioRef.current.pause();
     }
   }, [user?.music, music, bgType, visitedUser, play]);
 
