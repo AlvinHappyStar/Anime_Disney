@@ -11,8 +11,8 @@ import { pictureActions } from "redux/slices/picture";
 import { videoActions } from "redux/slices/video";
 import { musicActions } from "redux/slices/music";
 
-export const socket = io("http://95.216.22.143:3001");
-// export const socket = io("https://api.animedisney.com");
+// export const socket = io("http://95.216.22.143:3001");
+export const socket = io("https://api.animedisney.com");
 
 const SocketService = {
   sendDelete: () => {

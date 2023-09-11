@@ -14,6 +14,7 @@ import { userActions } from "redux/slices/users";
 import UsersService from "services/users.service";
 import { authActions } from "redux/slices/auth";
 import { io } from "socket.io-client";
+
 export default function Profile() {
   const socket: any = useRef();
   const [id, setId] = useState<string>("");
@@ -30,6 +31,8 @@ export default function Profile() {
     tab: memberTab,
   } = useAppSelector((state) => state.auth);
 
+  
+
   // useEffect(() => {
   //   if(id) {
   //     UsersService.getUser(id);  
@@ -39,8 +42,8 @@ export default function Profile() {
     idRef.current = id;  // Update the ref's value whenever id changes
   }, [id]);
   useEffect(() => {
-    socket.current = io("http://95.216.22.143:3001");
-    // socket.current = io("https://api.animedisney.com");
+    // socket.current = io("http://95.216.22.143:3001");
+    socket.current = io("https://api.animedisney.com");
     socket.current.on("photoUpdate", () => {
       if (idRef.current && idRef.current != 'undefined') {
         console.log("userIdRef:", idRef.current);
@@ -56,7 +59,7 @@ export default function Profile() {
       setId(userId);
     }
     if (userId != 'undefined')
-        UsersService.getUser(userId);
+      UsersService.getUser(userId);
     // Polling logic here
     // const interval = setInterval(() => {
     //   UsersService.getUserFriend(userId);
@@ -70,6 +73,7 @@ export default function Profile() {
 
 
   return (
+
     <div className="main">
       <Grid container spacing={3}>
         <Grid item xs={12} md={3}>
@@ -90,6 +94,7 @@ export default function Profile() {
         </Grid>
         <Grid item xs={12} md={6}>
           <div style={{ position: "relative" }}>
+            
             <div className="center-box">
               {tab === "gif" ? (
                 <Gifs />

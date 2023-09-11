@@ -23,7 +23,7 @@ export default function User() {
   return (
     <div>
       {/* <h2 className="heading">User</h2> */}
-
+      
       <div>
         <Grid container justifyContent={"center"}>
           <Grid item xs={12} md={upload ? 12 : 6}>
@@ -210,7 +210,7 @@ export default function User() {
                 </button>
               </div>
             )}
-            <div style={{ display: "flex", flexDirection: "column", alignItems: upload ? "center" : "normal" }}>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: upload ? "center" : "normal", marginLeft: "-1px" }}>
               {upload ? (
                 <>
                   <UploadBox />

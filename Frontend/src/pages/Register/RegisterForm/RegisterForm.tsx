@@ -31,11 +31,8 @@ function RegisterForm({ handleSubmit }: any) {
   };
   
   useEffect(() => {
-    let response;
-    if (!dob?.date)
-      response = dobCalc(currentTime.toLocaleDateString());
-    else
-      response = dobCalc(dob?.date);
+    if (!dob?.date) return;
+    let response = dobCalc(dob?.date);
 
     dispatch(change(form, "age", response?.age));
     dispatch(change(form, "zodiac", response?.zodiac));
@@ -75,7 +72,7 @@ function RegisterForm({ handleSubmit }: any) {
     );
     dispatch(
       change(form, "dob", {
-        date: pathname.includes("profile") ? !visitUser? currentTime.toLocaleDateString() : visitUser?.dob : user?.dob,
+        date: pathname.includes("profile") ? !visitUser? currentTime.toISOString() : visitUser?.dob : user?.dob,
       })
     );
     dispatch(

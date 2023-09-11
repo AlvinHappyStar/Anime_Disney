@@ -30,8 +30,8 @@ export default function Home() {
   } = useAppSelector((state) => state.auth);
 
   useEffect(() => {
-    socket.current = io("http://95.216.22.143:3001");
-    // socket.current = io("https://api.animedisney.com");
+    // socket.current = io("http://95.216.22.143:3001");
+    socket.current = io("https://api.animedisney.com");
     socket.current.on("online-users", (data: any) => {
       console.log(data);
       dispatch(authActions.setOnline(data));
