@@ -182,7 +182,7 @@ export default function Home() {
             className="heading"
             style={{
               // marginTop: "2px",
-              padding: "2px 24px",
+              padding: "0px 24px",
             }}
           >
             <span

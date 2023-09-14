@@ -201,7 +201,7 @@ progress {
   font-size: 16px;
   font-weight: 500;
   margin-top: 0;
-  line-height: 15px;
+  line-height: 18px;
   font-family: "Varela Round", sans-serif;
   gap: 18px;
   display: flex;
@@ -250,7 +250,8 @@ progress {
 }
 
 .profile-image-list {
-  width: 40px;
+  width: 80px;
+  height: 80px;
 }
 .cross-icon {
   /* top: 32px;
@@ -284,8 +285,7 @@ progress {
 }
 
 .chat-message img {
-  width: 40px;
-  height: 40px;
+  width: 80px;
 }
 
 .chat-message p {

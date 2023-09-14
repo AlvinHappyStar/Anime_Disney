@@ -116,7 +116,7 @@ export default function Profile() {
           <h2
             className="heading"
             style={{
-              marginTop: "2px",
+              // marginTop: "1px",
               padding: "0px 24px",
             }}
           >
