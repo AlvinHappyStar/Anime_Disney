@@ -124,6 +124,7 @@ export default function User() {
                   onClick={() => {
                     SocketService.sendLogout(user?._id);
                     AuthService.logout();
+                    dispatch(tabActions.setUpload(false));
                   }}
                   style={{
                     cursor: "pointer", display: "inline", border: 0,
@@ -219,7 +220,7 @@ export default function User() {
                       <PhotoGallery
                         group="profile"
                         image={`${process.env.REACT_APP_FILE_URL}/${user.profile_picture}`}
-                      ></PhotoGallery>
+                      ></PhotoGallery>                      
                     </>
                   ) : (
                     ""

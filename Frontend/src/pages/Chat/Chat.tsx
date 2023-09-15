@@ -128,7 +128,7 @@ export default function Chat() {
                       paddingLeft: "4px",
                       cursor: "pointer",
                       whiteSpace: "nowrap",
-                      marginTop: "8px",
+                      marginTop: "-5px",
                       overflow:'hidden',
                     }}
                     onClick={() => {

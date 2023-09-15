@@ -24,6 +24,7 @@ import VideoService from "services/video.service";
 import MusicService from "services/music.service";
 import { tabActions } from "redux/slices/tab";
 import AuthService from "services/auth.service";
+import { useNavigate } from "react-router-dom";
 
 const iconByFn = {
   cancel: { backgroundImage: `url(${cancelImg})` },
@@ -54,6 +55,8 @@ const Layout = ({
 
 export default function FileDropZone({ type, uploadType }: any) {
   const users = useAppSelector((state) => state.user.users);
+  const user = useAppSelector((state) => state.user.user);
+  const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const { type: gifType } = useAppSelector((state) => state.gif);
   const { type: videoType } = useAppSelector((state) => state.video);
@@ -145,6 +148,11 @@ export default function FileDropZone({ type, uploadType }: any) {
     allFiles.forEach((f) => f.remove());
     if (tab !== "user")
       dispatch(tabActions.setUpload(false));
+    if (tab == "user"){
+      // dispatch(tabActions.setTab("user"));
+      navigate(`/sdf`);
+    }
+      
   };
 
   const renderPreview = (props: any) => {
@@ -161,7 +169,6 @@ export default function FileDropZone({ type, uploadType }: any) {
       canRestart,
       extra: { minSizeBytes },
     } = props;
-    console.log(props);
 
     let title = `${name || '?'}, ${formatBytes(size)}`
     if (duration) title = `${title}, ${formatDuration(duration)}`

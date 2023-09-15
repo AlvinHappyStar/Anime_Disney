@@ -1,25 +1,18 @@
-import { useEffect, useRef, useState } from "react";
-import ViewIcon from "assets/View.png";
-import DeleteIcon from "assets/Delete.png";
-import BgIcon from "assets/Background.png";
-import AuthService from "services/auth.service";
-import { useLightgallery } from "react-lightgallery";
-import PictureService from "services/picture.service";
-import { pictureActions } from "redux/slices/picture";
-import { Grid, MenuItem, Select } from "@mui/material";
+import { Grid } from "@mui/material";
 import InputName from "components/templates/InputName";
-import { backgroundActions } from "redux/slices/background";
-import { useAppDispatch, useAppSelector } from "redux/hooks";
 import PhotoGallery from "components/templates/PhotoGallery";
-import ImageService from "services/image.service";
 import SelectType from "components/templates/SelectType";
-import { tabActions } from "redux/slices/tab";
 import UploadBox from "pages/UploadBox";
+import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useAppDispatch, useAppSelector } from "redux/hooks";
+import { backgroundActions } from "redux/slices/background";
+import AuthService from "services/auth.service";
+import ImageService from "services/image.service";
+import PictureService from "services/picture.service";
 
 export default function Pictures() {
   const dispatch = useAppDispatch();
-  const { openGallery } = useLightgallery();
   const { user } = useAppSelector((state) => state.auth);
   const { tab, upload } = useAppSelector((state) => state.tab);
   const location = useLocation();
@@ -124,8 +117,9 @@ export default function Pictures() {
                                   alt="View"
                                   onClick={() => openGallery("picture_private")}
                                 /> */}
+                                {/* onClick={() => openGallery("picture_private")} */}
                                 <span
-                                  onClick={() => openGallery("picture_private")}
+                                  
                                 >
                                   View
                                 </span>
@@ -195,7 +189,8 @@ export default function Pictures() {
                           alt="View"
                           onClick={() => openGallery("picture_private")}
                         /> */}
-                        <span onClick={() => openGallery("picture_private", index)}>
+                        {/* onClick={() => openGallery("picture_private", index)} */}
+                        <span >
                           View
                         </span>
                         <span

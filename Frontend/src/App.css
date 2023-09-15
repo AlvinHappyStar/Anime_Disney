@@ -5,11 +5,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: "Varela Round", sans-serif;
-  background: radial-gradient(
+  /* background: radial-gradient(
     circle,
     rgba(87, 149, 174, 1) 0%,
     rgba(0, 18, 38, 1) 100%
-  );
+  ); */
+  background : blue;
   scrollbar-width: 1px;
   scrollbar-color: white transparent;
 }
@@ -251,7 +252,6 @@ progress {
 
 .profile-image-list {
   width: 80px;
-  height: 80px;
 }
 .cross-icon {
   /* top: 32px;
@@ -280,7 +280,7 @@ progress {
   /* width: 180px; */
   display: flex;
   margin-right: 6px;
-  /* align-items: center; */
+  align-items: center;
   margin-top: 24px;
 }
 
@@ -311,9 +311,10 @@ progress {
 
 .bubble {
   padding: 10px;
-  margin-bottom: 5px;
-  display: inline-block;
+  margin-bottom: 6px;
+  display: flex;
   border: 1px solid #ffffff;
+  margin-top: 24px;
 }
 
 .bubble-inner {
