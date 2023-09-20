@@ -71,7 +71,7 @@ export default function App() {
     SocketService.getMusicTab(dispatch);
     SocketService.delMusic(dispatch);
     SocketService.getBg(dispatch);
-    // SocketService.OnlineUsers(dispatch);
+    SocketService.OnlineUsers(dispatch);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

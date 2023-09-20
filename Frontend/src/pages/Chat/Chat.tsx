@@ -65,11 +65,14 @@ export default function Chat() {
         className="chat-big-box"
         style={{
           height: `calc( 100vh - 330px)`,
-
           overflowY: "auto",
-          paddingRight: "5px",
-          marginBottom: "5px",
-          overflowX: "hidden"
+          paddingRight: "30px",
+          marginBottom: "30px",
+          overflowX: "hidden",
+          display:'flex',
+          flexDirection:'column',
+          gap:"30px",
+          marginTop:"24px",
         }}
       >
         {messages.map((message: any, index: any) => {
@@ -128,7 +131,6 @@ export default function Chat() {
                       paddingLeft: "4px",
                       cursor: "pointer",
                       whiteSpace: "nowrap",
-                      marginTop: "-5px",
                       overflow:'hidden',
                     }}
                     onClick={() => {

@@ -10,7 +10,7 @@ body {
     rgba(87, 149, 174, 1) 0%,
     rgba(0, 18, 38, 1) 100%
   ); */
-  background : blue;
+  background : black;
   scrollbar-width: 1px;
   scrollbar-color: white transparent;
 }
@@ -269,7 +269,7 @@ progress {
 .chat-message {
   display: flex;
   position: relative;
-  /* align-items: center; */
+  align-items: flex-start;
 }
 
 .text-message a {
@@ -281,11 +281,11 @@ progress {
   display: flex;
   margin-right: 6px;
   align-items: center;
-  margin-top: 24px;
 }
 
 .chat-message img {
   width: 80px;
+  min-height: 95px;
 }
 
 .chat-message p {
@@ -311,16 +311,16 @@ progress {
 
 .bubble {
   padding: 10px;
-  margin-bottom: 6px;
   display: flex;
   border: 1px solid #ffffff;
-  margin-top: 24px;
+  height: 100%;
 }
 
 .bubble-inner {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 100%;
 }
 
 .bubble-inner> div {
@@ -526,7 +526,6 @@ progress {
   display: flex;
   overflow-x: auto;
   align-items: center;
-  margin-bottom: 5px;
   padding-bottom: 5px;
   min-height: 40px;
 }
